@@ -1,0 +1,29 @@
+{
+  "name": "tinkamo-editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel app/index.html --port 8000 --hmr-port 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NYUMusEdLab/tinkamo-editor.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/NYUMusEdLab/tinkamo-editor/issues"
+  },
+  "homepage": "https://github.com/NYUMusEdLab/tinkamo-editor#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
