@@ -45,11 +45,11 @@ function TinkaList({ tinkamos }) {
       Connected Tinkamos
       <ul>
         {tinkamos.map(tinka => {
-          console.log('mynameyeff', tinka)
+          console.log('mynameyeff', JSON.stringify(tinka))
           return (
           <li key={tinka[1].id}>
             {console.log("yooyoo", tinka[1].sensor, tinka[1].sensor_connected)}
-            {tinka[1].name + " / " + (tinka[1].sensor_connected ? tinka[1].sensor.name : "loops")}
+            {tinka[1].name + " / " + (tinka[1].sensor ? tinka[1].sensor.name : "loops")}
           </li>
         )})}
       </ul>
