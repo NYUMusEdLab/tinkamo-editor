@@ -18,15 +18,16 @@
   },
   "homepage": "https://github.com/NYUMusEdLab/tinkamo-editor#readme",
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "parcel-bundler": "^1.12.3"
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
-    "@musedlab/tinkamod": "0.0.3",
-    "react": "^16.10.1",
-    "react-bootstrap": "^1.0.0-beta.12",
+    "@musedlab/tinkamod": "^0.1.0",
+    "codemirror": "^5.49.2",
+    "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.14",
     "react-codemirror2": "^6.0.0",
-    "react-dom": "^16.10.1"
+    "react-dom": "^16.11.0"
   }
 }

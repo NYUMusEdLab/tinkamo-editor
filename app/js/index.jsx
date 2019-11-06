@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
-import Tinkamo from "@musedlab/tinkamod/web/tinkamo"; 
+import Tinkamo from "@musedlab/tinkamod/src/tinkamo"; 
 import Sidebar from "./Sidebar"; 
 import './index.css';
+import { Controlled as CodeMirror } from 'react-codemirror2';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/material.css';
 
 const tinkamo_ = new Tinkamo(); 
+
 
 function TinkamoEditor() {
   const [code, setCode] = useState("");
   const [tinkamo, setTinkamo] = useState(tinkamo_); 
   const [cores, setTinkacores] = useState(tinkamo.tinkacores); 
+  //set Tinkamo in event listener
+  tinkamo.addEventListener('*', (event) => {
+    console.log('EVENT\n\n', event);
+  });
+
   
   const onClick = () => {
-    tinkamo.connect(() => { 
-      setTinkamo({...tinkamo}); 
-      setTinkacores(tinkamo.tinkacores); 
-      console.log("IM HERE", tinkamo.getTinkamoList());
-      console.log("IM HERE part 2 ", tinkamo.tinkacores);
-      console.log("PART 3", {...tinkamo})
-
-    });
+    tinkamo.connect();
   }
   useEffect(() => { 
-    console.log('YEET', tinkamo.tinkacores)
+    // console.log('YEET', tinkamo.tinkacores)
     setTinkacores(tinkamo.tinkacores); 
   }, [tinkamo])
 
@@ -30,7 +32,21 @@ function TinkamoEditor() {
     <div>
       <Sidebar onClick={() => onClick()} />
       <h1 className="main">Tinkamo Editor</h1>
-      <textarea className="main" value={code} onChange={e => setCode(e.target.value)} />
+      {/* <textarea className="main" value={code} onChange={e => setCode(e.target.value)} /> */}
+      <CodeMirror
+        value={code}
+        options={{
+          mode: 'xml',
+          theme: 'material',
+          lineNumbers: true
+        }}
+        onBeforeChange={(editor, data, value) => {
+          setCode(value)
+        }}
+        // onChange={(editor, data, value) => {
+        //   setCode(value)
+        // }}
+      />
       <pre>{code}</pre>
       <TinkaList tinkamos={Object.entries(cores)} />
     </div>
