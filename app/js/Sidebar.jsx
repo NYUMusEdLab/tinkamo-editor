@@ -1,11 +1,11 @@
 import React from 'react';
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './Sidebar.css';
 
 
 const Sidebar = (props) => {
     return (
-        <div className="sidebar">
+        <div>
             <Button onClick={props.onClick} variant="primary"> + New Tinka</Button>
         </div>
     )
